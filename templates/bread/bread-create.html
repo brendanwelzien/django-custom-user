@@ -1,0 +1,10 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<p> this is the create page, create more bread!</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="SAVE">
+</form>
+{% endblock content %}

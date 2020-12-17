@@ -1,0 +1,11 @@
+{% extends '_base.html'%}
+
+{% block content %}
+<p> this is the delete view, delete some bread!</p>
+<form action="" method="POST">
+    {% csrf_token %}
+    <p> click to delete {{ bread.name }}</p>
+    <input type='submit' value='delete'>
+    <a href="{{ view.get_success_url }}" class="btn btn-secondary"> Cancel</a>
+</form>
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends '_base.html'%}
+
+{% block content %}
+<p> Details about: {{bread.name}} </p>
+<p> Description: {{bread.description}}</p>
+<p><a href="{% url 'bread-update' bread.id %}"> edit</a></p>
+<p><a href="{% url 'bread-delete' bread.id %}"> delete</a></p>
+{% endblock content %}
