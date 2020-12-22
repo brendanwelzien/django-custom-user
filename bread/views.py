@@ -2,6 +2,16 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from .models import Bread
 from django.urls import reverse_lazy
+from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from .serializers import BreadSerializer
+
+class BreadListAPI(ListCreateAPIView):
+    queryset = Bread.objects.all()
+    serializer_class = BreadSerializer
+
+class BreadDetailAPI(RetrieveUpdateDestroyAPIView):
+    queryset = Bread.objects.all()
+    serializer_class = BreadSerializer
 
 class BreadListView(ListView): # template and model
     template_name = "bread/bread-list.html"
